@@ -1,5 +1,5 @@
 import express from 'express';
-import listCars from './controllers/listCarsController.js';
+import listCars from './controllers/listCars.js';
 const app = express();
 
 app.use(express.json());
