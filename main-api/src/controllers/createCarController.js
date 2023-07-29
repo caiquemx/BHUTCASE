@@ -1,6 +1,5 @@
 import createCarService from '../services/createCarService.js';
 import axios from 'axios';
-import {sendToQueue} from '../kafkaQueue/producer.js';
 
 const createCar = async (req, res) => {
   try {

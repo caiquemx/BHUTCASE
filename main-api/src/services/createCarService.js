@@ -1,6 +1,6 @@
 import {postCar} from '../utils/fetchCars.js';
 import Logs from '../database/model/logsModel.js';
-import {sendToQueue} from '../kafkaQueue/producer.js';
+import {sendToQueue} from '../queueProducer/producer.js';
 
 const createCarService = async (req) => {
   const response = await postCar(req.body);

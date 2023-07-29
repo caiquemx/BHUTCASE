@@ -3,7 +3,7 @@ import listCars from './controllers/listCarsController.js';
 import createCar from './controllers/createCarController.js';
 import connection from './database/connection.js';
 import carNotify from './controllers/carNotify.js';
-import {queueProducer} from './kafkaQueue/producer.js';
+import {queueProducer} from './queueProducer/producer.js';
 
 connection(); // connects to DB
 queueProducer(); // connects producer
