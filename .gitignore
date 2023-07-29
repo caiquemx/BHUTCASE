@@ -1,1 +1,4 @@
-/node_modules
+/data
+/main-api/node_modules
+/notifications/node_modules
+.env
