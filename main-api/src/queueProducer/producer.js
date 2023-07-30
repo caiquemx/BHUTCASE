@@ -4,7 +4,11 @@ import {Partitioners} from 'kafkajs';
 const producer = kafka.producer({createPartitioner: Partitioners.DefaultPartitioner});
 
 export const queueProducer = async () => {
-  await producer.connect();
+  try {
+    await producer.connect();
+  } catch (error) {
+    console.log(error.message);
+  }
 };
 export const sendToQueue = async (payload) => {
   try {
