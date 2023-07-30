@@ -12,7 +12,12 @@ export const queueConsumer = async () => {
 export const consumeNotification = async () => {
   await consumer.run({
     eachMessage: async ({_topic, _partition, message}) => {
-      const notification = {notification: 'Carro criado com sucesso'};
+      let notification;
+      if (message.value) {
+        notification = {notification: 'Carro criado com sucesso'};
+      } else {
+        notification = {notification: 'Carro ainda não criado'};
+      }
       try {
         await axios.post(WEBHOOK_ENDPOINT, notification);
         console.log('notificação enviada com sucesso');
@@ -21,4 +26,5 @@ export const consumeNotification = async () => {
       }
     },
   });
+  await consumer.disconnect();
 };
